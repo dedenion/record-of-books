@@ -1,4 +1,4 @@
-.Products {
+.Books {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,26 +7,14 @@
     height: 100vh; /* 画面の高さいっぱいに表示する場合 */
 }
 
-.Products h1 {
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+.Books h1 {
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    padding-top: 100px;
+    padding-bottom: 200px;
 }
 
-.Products button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    color: #fff;
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-.Products button:hover {
-    background: linear-gradient(135deg, #2980b9, #3498db);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+
+.three {
+    padding-top: 50px;
+    padding-bottom: 30px;
 }
