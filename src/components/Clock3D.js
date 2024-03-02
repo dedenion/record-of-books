@@ -7,12 +7,23 @@ const Clock3D = () => {
     const rendererRef = useRef(null);
     const clockTextRef = useRef(null);
     const fontRef = useRef(null);
+    const scene = new THREE.Scene();
+
+    const addGround = () => {
+        const groundGeometry = new THREE.PlaneGeometry(40, 40); // 幅と高さを調整可能
+        const groundMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide }); // カラーを適切に設定
+        const ground = new THREE.Mesh(groundGeometry, groundMaterial);
+        ground.rotation.x = -Math.PI / 2; // 平らな地面を作成するために回転
+        ground.position.set(3, -3, 0); // x: 0, y: -2, z: 0 の位置に地面を配置する
+        
+        scene.add(ground);
+    };
 
     useEffect(() => {
         let requestId;
         let clockTextMesh;
 
-        const scene = new THREE.Scene();
+        
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.set(3, -2, 8);
 
@@ -27,6 +38,7 @@ const Clock3D = () => {
             fontLoader.load('/fonts/Rounded Mplus 1c Medium_Regular.json', (font) => {
                 fontRef.current = font;
                 updateClock();
+                addGround(); 
             });
         };
 
@@ -44,7 +56,7 @@ const Clock3D = () => {
             const clockTextGeometry = new TextGeometry(timeString, {
                 font: fontRef.current,
                 size: 1,
-                height: 0.1,
+                height: 0.3,
                 curveSegments: 12,
             });
             const clockTextMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
