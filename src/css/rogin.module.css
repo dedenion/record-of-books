@@ -1,4 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+  
+}
+
 .signin {
+    
     text-align: center;
     margin-top: 15rem;
 }
@@ -30,10 +40,12 @@ img {
     border-radius: 10px;
     box-shadow: 1px 5px 10px #626262;
     cursor: pointer;
-    background-color: #cf9b48;
+    background-color: #8aa1d9;
     color: white;
     font-weight: 800;
     font-size: 1.2rem;
+    z-index: 100;
+    position: relative;
 }
 
 .signout {
@@ -41,3 +53,45 @@ img {
     margin-bottom: 500px;
 }
 
+
+
+  .ring i {
+    position:absolute;
+    inset: 0;
+    border: 2px solid #1c1a1a;
+    transition: 0.5s;
+    z-index: 1;
+    opacity: 0.2;
+  }
+  .ring i:nth-child(1) {
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    animation: animate 6s linear infinite;
+  }
+  .ring i:nth-child(2) {
+    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+    animation: animate 4s linear infinite;
+  }
+  .ring i:nth-child(3) {
+    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+    animation: animate2 10s linear infinite;
+  }
+  .ring:hover i {
+    border: 8px solid #9bb2ed; /* 直接色を指定、ここでは緑色 */
+    filter: drop-shadow(0 0 70px #020202); /* 直接色を指定、ここでは緑色 */
+  }
+  @keyframes animate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes animate2 {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }

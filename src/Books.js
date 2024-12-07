@@ -2,14 +2,10 @@ import React, { useState } from 'react'
 //import { Link } from "react-router-dom"
 import styles from "./css/books.module.css"
 import Header from './components/Header';
-import ThreeText from "./components/ThreeText"
-import ThreeAnimation from './components/ThreeTv';
-import Book from './components/BookGarly';
 
 
 
 function Books() {
-    const [inputText] = useState('');
 
 
     return (
@@ -17,16 +13,6 @@ function Books() {
             <Header/>
             <div className={styles.Books}>
                 <h1>Books</h1>
-            </div>
-            <div className={styles.three}>
-                <ThreeText text={inputText} />
-                
-            </div>
-            <div>
-            <ThreeAnimation/>
-            </div>
-            <div>
-                <Book />
             </div>
         </div>
     );

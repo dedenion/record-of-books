@@ -13,6 +13,7 @@ function RogIn() {
 
     return (
         <div>
+        
             <div className={styles.signin}>
                 <h2>Welcome Record of Books</h2>
                 {user ? (
@@ -29,8 +30,14 @@ function RogIn() {
                     <SignInButton/>
                 )
             }
-            </div>
+                </div>
+                <div className={styles.ring}>
+            <i style={{color:"#00ff0a"}}></i>
+            <i style={{color:"#ff0057"}}></i>
+            <i style={{color:"#fffd44"}}></i>
         </div>
+            </div>
+        
     );
 }
 

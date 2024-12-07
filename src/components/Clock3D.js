@@ -16,7 +16,7 @@ const Clock3D = () => {
         ground.rotation.x = -Math.PI / 2; // 平らな地面を作成するために回転
         ground.position.set(3, -3, 0); // x: 0, y: -2, z: 0 の位置に地面を配置する
         
-        scene.add(ground);
+        //scene.add(ground);
     };
 
     useEffect(() => {

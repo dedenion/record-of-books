@@ -1,39 +1,53 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  .nav ul li:last-child {
-    margin-right: 0;
-  }
-  
-  .nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .nav ul li a:hover {
-    color: #ccc;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0); /* 背景色を透明に */
+  z-index: 9999;
+  transition: background-color 0.5s; /* 背景色の変化をアニメーション化 */
+}
+
+.logo {
+  width: 100px;
+  height: 50px;
+}
+
+.nav {
+  perspective: 1000px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.nav a {
+  color: #4b4747;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+.nav ul li:hover {
+  transform: scale(1.1) rotateY(360deg);
+}
+
+.content {
+  margin-top: 70px; /* ヘッダーの高さより下にコンテンツを配置 */
+}
+
+.scrolled {
+  background-color: rgba(255, 255, 255, 0.5); /* 上にスクロールすると背景色を設定 */
+}
