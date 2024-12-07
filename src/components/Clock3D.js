@@ -100,7 +100,9 @@ scene.traverse(obj => {
         };
     }, []);
 
-    return null;
+    return (
+        <canvas id="clock"></canvas>
+    );
 };
 
 export default Clock3D;
